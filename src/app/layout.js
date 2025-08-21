@@ -26,8 +26,10 @@ export default function RootLayout({ children }) {
       >
         <div className="max-w-7xl mx-auto">
           <Navbar></Navbar>
-          <div className="max-h-screen"></div>
-          {children}
+          <div className="min-h-screen">
+              {children}
+          </div>
+        
           <Footer></Footer>
         </div>
       </body>
