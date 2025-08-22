@@ -11,15 +11,11 @@ export const sendDb = async (payload) => {
   }
 
   const user = await userCollection.findOne({ email: payload.email });
-  if(user){
-    return {message:"found"}
-  }
 
   if (!user) {
     const result = await userCollection.insertOne(payload);
-    console.log(result);
-
-    const { _id } = result;
-    return _id;
+    result.insertedId = result.insertedId.toString();
+    return result;
   }
+  return { message: false };
 };
