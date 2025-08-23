@@ -3,7 +3,6 @@ import Image from "next/image";
 import Button from "../components/Button";
 
 const All_Product = async () => {
-  // Fetch with ISR (revalidate every 60s)
   const res = await fetch(`${process.env.NEXT_URL}/api/all-product`, {
     next: { revalidate: 60, cache: "force-cache" },
   });
