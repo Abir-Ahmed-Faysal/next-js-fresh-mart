@@ -8,7 +8,6 @@ export const loginUser = async(payload) => {
     const userCollection =await dbConnect(collectionNameObj.userCollection)
 
     const user =await userCollection.findOne({email})
-    console.log(user,payload);
     if(!user)return null
   if (user.password !== password) {
     return null;

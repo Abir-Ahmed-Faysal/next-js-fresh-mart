@@ -11,6 +11,8 @@ const Button = ({ btnText, pathname }) => {
     
     if (currentPathname === "/") {
       router.push(pathname);
+    }else if(currentPathname === "/all-product"){
+      router.push(pathname);
     }
   };
 

@@ -6,10 +6,10 @@ import { usePathname, useRouter } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
 
 const Navbar = () => {
-  const sessintoken = useSession();
+
   const { data: session, status } = useSession();
 
-  console.log(sessintoken);
+
 
   const pathname = usePathname();
   const router = useRouter();
