@@ -81,7 +81,7 @@ export default function LoginForm() {
           href="/register"
           className="text-indigo-600 font-medium hover:underline"
         >
-          Login
+          Register
         </a>
       </p>
     </form>

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import RegisterForm from "./components/RegisterForm";
+import SocialLogin from "../components/SocialLogin";
 
 
 export default function Register() {
@@ -13,6 +14,7 @@ export default function Register() {
         </CardHeader>
         <CardContent>
           <RegisterForm />
+          <SocialLogin></SocialLogin>
         </CardContent>
       </Card>
     </div>

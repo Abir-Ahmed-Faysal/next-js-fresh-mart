@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { sendDb } from "@/app/actions/auth/regsisterUser";
-
+import Link from "next/link";
 
 export default function RegisterForm() {
   const [form, setForm] = useState({
@@ -21,9 +21,7 @@ export default function RegisterForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    
- 
-    await sendDb(form); 
+    await sendDb(form);
   };
 
   return (
@@ -73,9 +71,12 @@ export default function RegisterForm() {
 
       <p className="text-center text-sm text-gray-600 mt-3">
         Already have an account?{" "}
-        <a href="/login" className="text-indigo-600 font-medium hover:underline">
+        <Link
+          href="/login"
+          className="text-indigo-600 font-medium hover:underline"
+        >
           Login
-        </a>
+        </Link>
       </p>
     </form>
   );

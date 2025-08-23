@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import LoginForm from "./components/LoginForm";
-
-
+import SocialLogin from "../components/SocialLogin";
 
 export default function Login() {
   return (
@@ -9,11 +8,12 @@ export default function Login() {
       <Card className="w-full max-w-md shadow-lg rounded-2xl">
         <CardHeader>
           <CardTitle className="text-center text-2xl font-bold text-indigo-700">
-          Log in Form
+            Log in Form
           </CardTitle>
         </CardHeader>
         <CardContent>
           <LoginForm />
+          <SocialLogin></SocialLogin>
         </CardContent>
       </Card>
     </div>
