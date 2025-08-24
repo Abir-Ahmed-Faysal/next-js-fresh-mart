@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import NextAuthProvider from "@/providers/NextAuthProvider";
+import ToastProvider from "./components/ToastProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +27,13 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextAuthProvider>
-          <div className="max-w-7xl mx-auto">
+          <div className="">
             <Navbar></Navbar>
-            <div className="min-h-screen">{children}</div>
+            <div className="max-w-7xl mx-auto min-h-screen">{children}</div>
 
             <Footer></Footer>
           </div>
+          <ToastProvider></ToastProvider>
         </NextAuthProvider>
       </body>
     </html>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function AddProduct() {
   const [food, setFood] = useState({
@@ -31,7 +32,7 @@ export default function AddProduct() {
       if (res.ok) {
        
        
-        alert('Product added successfully!');
+        toast.success('Product added successfully!');
         setFood({ name: "", description: "", price: "", category: "", image: "" });
       } else {
         const errorData = await res.json();
