@@ -6,8 +6,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { sendDb } from "@/app/actions/auth/regsisterUser";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function RegisterForm() {
+  const router = useRouter();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -20,8 +22,18 @@ export default function RegisterForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const result = await sendDb(form);
 
-    await sendDb(form);
+    try {
+      if (result.message === false) {
+        alert("already registered");
+      } else if (result.insertedId) {
+        router.push("/all-product");
+        alert("success");
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

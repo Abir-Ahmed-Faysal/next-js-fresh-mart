@@ -3,9 +3,10 @@ import React from "react";
 const SingleProduct = async ({ params }) => {
   const p = await params;
   const id = p.id;
-  const res = await fetch(`${process.env.NEXT_URL}/api/single-product/${id}`);
+  const res = await fetch(`https://freshmart-psi.vercel.app/api/single-product/${id}`);
   const data = await res.json();
-  console.log(data);
+
+
 
   return (
     <div
@@ -18,17 +19,17 @@ const SingleProduct = async ({ params }) => {
       }}
     >
       <img
-        src={product.image}
-        alt={product.name}
+        src={data?.image}
+        alt={data?.name}
         style={{ width: "100%", borderRadius: "10px" }}
       />
-      <h2>{product.name}</h2>
-      <p>{product.description}</p>
+      <h2>{data?.name}</h2>
+      <p>{data?.description}</p>
       <p>
-        <strong>Category:</strong> {product.category}
+        <strong>Category:</strong> {data?.category}
       </p>
       <p>
-        <strong>Price:</strong> ${product.price}
+        <strong>Price:</strong> ${data?.price}
       </p>
     </div>
   );

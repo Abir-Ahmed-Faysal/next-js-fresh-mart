@@ -1,33 +1,27 @@
 import dbConnect from "@/lib/mongodbConnnect";
 
 export default async function Products() {
-  const data = await dbConnect("products").find().toArray();
+  const data = await dbConnect("products").find().limit(8).toArray();
 
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+    <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-4">
       {data.map((product) => (
         <div
           key={product.id}
-          style={{
-            border: "1px solid #ddd",
-            borderRadius: "8px",
-            padding: "10px",
-            width: "200px",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-          }}
+          className="border border-gray-300 rounded-lg shadow-md p-4 flex flex-col"
         >
           <img
             src={product.image}
             alt={product.name}
-            style={{ width: "100%", borderRadius: "8px" }}
+            className="w-full h-40 object-cover rounded-lg mb-4"
           />
-          <h3>{product.name}</h3>
-          <p>{product.description}</p>
-          <p>
-            <strong>Price:</strong> {product.price} BDT
+          <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
+          <p className="text-gray-600 text-sm mb-4 flex-grow">{product.description}</p>
+          <p className="text-gray-800 font-medium">
+            <span className="font-bold">Price:</span> {product.price} BDT
           </p>
-          <p>
-            <strong>Category:</strong> {product.category}
+          <p className="text-gray-800 font-medium">
+            <span className="font-bold">Category:</span> {product.category}
           </p>
         </div>
       ))}

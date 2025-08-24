@@ -46,20 +46,23 @@ export const authOptions = {
   },
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
-      
       if (account) {
         const { providerAccountId, provider } = account;
 
-        const { email: user_email, image, name } = user;
-        const userDbCollection = dbConnect(collectionNameObj.userCollection);
-const find=await userDbCollection.findOne({providerAccountId})
-if(!find){
-  const payload={providerAccountId,provider,user_email:email,image,name}
-await userDbCollection.insertOne(payload)
-}
+        const { email, image, name } = user;
+        const userDbCollection = await dbConnect(
+          collectionNameObj.userCollection
+        );
 
+        const find = await userDbCollection.findOne({ providerAccountId });
+        if (!find) {
+          const payload = { providerAccountId, provider, email, image, name };
+          await userDbCollection.insertOne(payload);
+        }
       }
       return true;
     },
   },
+
+  secret: process.env.NEXTAUTH_SECRET,
 };

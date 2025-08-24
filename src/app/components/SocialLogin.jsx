@@ -11,13 +11,13 @@ const SocialLogin = () => {
   const session = useSession();
   const router = useRouter();
   useEffect(() => {
-    if (session?.status==='authenticated') {
+    if (session?.status === "authenticated") {
       router.push("/all-product");
     }
   }, [session?.status]);
   const handleGoogleLogin = async () => {
     try {
-      await signIn("google");
+      await signIn("google", { redirect: false });
     } catch (err) {
       console.error("Google login failed:", err);
     }

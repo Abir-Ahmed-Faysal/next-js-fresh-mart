@@ -6,7 +6,7 @@ export const collectionNameObj = {
 };
 
 export default function dbConnect(collectionName) {
-  const uri = process.env.URI;
+  const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
   const client = new MongoClient(uri, {
     serverApi: {
       version: ServerApiVersion.v1,
@@ -15,5 +15,5 @@ export default function dbConnect(collectionName) {
     },
   });
 
-  return client.db(process.env.DB_NAME).collection(collectionName);
+  return client.db("FreshMart").collection(collectionName);
 }
