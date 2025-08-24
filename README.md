@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fresh Mart
+website: https://freshmart-psi.vercel.app/
+github: https://github.com/Abir-Ahmed-Faysal/next-js-fresh-mart
 
-## Getting Started
+Fresh Mart is a modern **supershop web application** built with **Next.js**. Users can browse products, view detailed information, and authenticated users can add new products to the store. The application integrates **NextAuth.js** for authentication and uses a database to store product data.  
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Project Overview](#project-overview)  
+- [Features](#features)  
+- [Technologies Used](#technologies-used)  
+- [Installation & Setup](#installation--setup)  
+- [Project Structure & Routes](#project-structure--routes)  
+- [Optional Enhancements](#optional-enhancements)  
+- [Live Demo](#live-demo)  
+- [License](#license)  
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Overview
 
-## Learn More
+Fresh Mart is a fully responsive supershop website where users can:
 
-To learn more about Next.js, take a look at the following resources:
+- Browse a list of products.
+- View detailed information about each product.
+- Log in using social or credential-based authentication.
+- Add new products (protected route).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The website is designed with **Next.js 15 App Router**, **Tailwind CSS**, and **NextAuth.js** for authentication.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Core Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Landing Page (`/`)**
+   - Sections: Navbar, Hero, Product Highlights, Footer
+   - Navigation to login and products
+   - Publicly accessible (no authentication required)
+
+2. **Login Page (`/login`)**
+   - Authentication with **NextAuth.js** (Google or credentials)
+   - Redirects to `/products` after successful login
+
+3. **Product List Page (`/products`)**
+   - Publicly accessible
+   - Fetch and display products from a mock backend or database
+   - Each product includes: name, description, price, and details button
+
+4. **Product Details Page (`/products/[id]`)**
+   - Publicly accessible
+   - Displays full details of a single product
+
+5. **Protected Add Product Page (`/dashboard/add-product`)**
+   - Only accessible to authenticated users
+   - Form to add a new product to the database
+   - Redirects unauthenticated users to `/login`
+
+---
+
+## Optional Enhancements
+
+- Loading spinner during form submissions
+- Toast notifications for successful actions
+- Theme toggle (light/dark mode)
+
+---
+
+## Technologies Used
+
+- **Next.js 15** (App Router)  
+- **React 19.1**  
+- **Tailwind CSS 4.1**  
+- **NextAuth.js 4.24**  
+- **MongoDB 6.18**  
+- **Radix UI, Lucide React, React Icons**  
+- **React Hot Toast**  
+- **Express.js / Next.js API Route Handlers** (for backend)
+
+**Dependencies Overview:**
+
+```text
+@eslint/eslintrc@3.3.1
+@radix-ui/react-label@2.1.7
+@radix-ui/react-slot@1.2.3
+@class-variance-authority@0.7.1
+@tailwindcss/postcss@4.1.12
+clsx@2.1.1
+eslint-config-next@15.5.0
+eslint@9.34.0
+lucide-react@0.540.0
+mongodb@6.18.0
+next-auth@4.24.11
+next@15.5.0
+react-dom@19.1.0
+react-hot-toast@2.6.0
+react-icons@5.5.0
+react@19.1.0
+tailwind-merge@3.3.1
+tailwindcss@4.1.12
+tw-animate-css@1.3.7
