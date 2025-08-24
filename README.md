@@ -1,8 +1,10 @@
-# Fresh Mart
-website: https://freshmart-psi.vercel.app/
-github: https://github.com/Abir-Ahmed-Faysal/next-js-fresh-mart
+# Fresh Mart 🛒
 
-Fresh Mart is a modern **supershop web application** built with **Next.js**. Users can browse products, view detailed information, and authenticated users can add new products to the store. The application integrates **NextAuth.js** for authentication and uses a database to store product data.  
+[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://freshmart-psi.vercel.app/)  
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/Abir-Ahmed-Faysal/next-js-fresh-mart)  
+[![License](https://img.shields.io/badge/License-MIT-blueviolet)](LICENSE)
+
+Fresh Mart is a modern **supershop web application** built with **Next.js**. Users can browse products, view detailed information, and authenticated users can add new products. The project integrates **NextAuth.js** for authentication and **MongoDB** for data storage.
 
 ---
 
@@ -11,7 +13,6 @@ Fresh Mart is a modern **supershop web application** built with **Next.js**. Use
 - [Project Overview](#project-overview)  
 - [Features](#features)  
 - [Technologies Used](#technologies-used)  
-- [Installation & Setup](#installation--setup)  
 - [Project Structure & Routes](#project-structure--routes)  
 - [Optional Enhancements](#optional-enhancements)  
 - [Live Demo](#live-demo)  
@@ -21,14 +22,22 @@ Fresh Mart is a modern **supershop web application** built with **Next.js**. Use
 
 ## Project Overview
 
-Fresh Mart is a fully responsive supershop website where users can:
+Fresh Mart is a fully responsive supershop website with **three main sections**:
 
-- Browse a list of products.
-- View detailed information about each product.
-- Log in using social or credential-based authentication.
-- Add new products (protected route).
+| Section | Route | Description |
+|---------|-------|-------------|
+| Home | `/` | Banner, featured products, newsletter signup |
+| Products | `/products` | Lists all products from database |
+| Dashboard | `/dashboard` | Authenticated users can add new products |
 
-The website is designed with **Next.js 15 App Router**, **Tailwind CSS**, and **NextAuth.js** for authentication.  
+**Key functionalities:**
+
+- Browse product listings  
+- View detailed product information  
+- Social or credentials-based login  
+- Add new products (protected route)
+
+Built with **Next.js 15 App Router**, **Tailwind CSS**, and **NextAuth.js** for authentication.
 
 ---
 
@@ -36,49 +45,46 @@ The website is designed with **Next.js 15 App Router**, **Tailwind CSS**, and **
 
 ### Core Features
 
-1. **Landing Page (`/`)**
-   - Sections: Navbar, Hero, Product Highlights, Footer
-   - Navigation to login and products
-   - Publicly accessible (no authentication required)
+1. **Home Page (`/`)**
+   - Navbar, Hero section, Featured Products, Newsletter signup, Footer  
+   - Publicly accessible
 
 2. **Login Page (`/login`)**
-   - Authentication with **NextAuth.js** (Google or credentials)
-   - Redirects to `/products` after successful login
+   - Authentication with **NextAuth.js** (Google or credentials)  
+   - Redirects to `/products` after login
 
-3. **Product List Page (`/products`)**
-   - Publicly accessible
-   - Fetch and display products from a mock backend or database
-   - Each product includes: name, description, price, and details button
+3. **Products Page (`/products`)**
+   - Publicly accessible  
+   - Displays product data from database  
+   - Each product shows: name, description, price, details button
 
 4. **Product Details Page (`/products/[id]`)**
-   - Publicly accessible
-   - Displays full details of a single product
+   - Publicly accessible  
+   - Shows full details of a single product
 
-5. **Protected Add Product Page (`/dashboard/add-product`)**
-   - Only accessible to authenticated users
-   - Form to add a new product to the database
+5. **Dashboard / Add Product Page (`/dashboard/add-product`)**
+   - Only accessible to authenticated users  
+   - Form to add new products to database  
    - Redirects unauthenticated users to `/login`
 
 ---
 
 ## Optional Enhancements
 
-- Loading spinner during form submissions
-- Toast notifications for successful actions
-- Theme toggle (light/dark mode)
+- Loading spinner during form submissions  
+- Toast notifications for actions  
+- Theme toggle (light/dark mode)  
 
 ---
 
 ## Technologies Used
 
-- **Next.js 15** (App Router)  
-- **React 19.1**  
-- **Tailwind CSS 4.1**  
-- **NextAuth.js 4.24**  
-- **MongoDB 6.18**  
-- **Radix UI, Lucide React, React Icons**  
-- **React Hot Toast**  
-- **Express.js / Next.js API Route Handlers** (for backend)
+- **Frontend:** Next.js 15, React 19.1, Tailwind CSS 4.1  
+- **Authentication:** NextAuth.js 4.24  
+- **Database:** MongoDB 6.18  
+- **UI Libraries:** Radix UI, Lucide React, React Icons  
+- **Utilities:** React Hot Toast, Tailwind Merge  
+- **Backend:** Express.js / Next.js API Route Handlers  
 
 **Dependencies Overview:**
 
